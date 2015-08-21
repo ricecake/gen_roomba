@@ -28,7 +28,9 @@ start_link() ->
 
 %% Child :: {Id,StartFunc,Restart,Shutdown,Type,Modules}
 init([]) ->
-    {ok, { {one_for_all, 0, 1}, []} }.
+    {ok, { {one_for_one, 0, 1}, [
+        {gen_roomba_srv, {gen_roomba_srv, start_link, []}, permanent, 5000, worker, [gen_roomba_srv]}
+    ]} }.
 
 %%====================================================================
 %% Internal functions
