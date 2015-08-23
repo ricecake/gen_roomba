@@ -1,1 +1,2 @@
 -module(gen_roomba).
+-export([start/0]).
