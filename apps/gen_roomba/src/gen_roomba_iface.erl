@@ -30,8 +30,8 @@ close(FD) ->
 passive(FD) -> gen_roomba_iface:send_bytes(FD, <<128:8>>).
 active(FD)  -> gen_roomba_iface:send_bytes(FD, <<131:8>>).
 
-drive(FD, 0,     right) -> drive(FD, 250, -1);
-drive(FD, 0,     left)  -> drive(FD, 250,  1);
+drive(FD, 0,     right) -> drive(FD, 150, -1);
+drive(FD, 0,     left)  -> drive(FD, 150,  1);
 drive(FD, Speed, right) -> drive(FD, Speed, -2000);
 drive(FD, Speed, left)  -> drive(FD, Speed,  2000);
 drive(FD, Speed, none)  -> drive(FD, Speed, 32768);
