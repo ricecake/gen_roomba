@@ -2,8 +2,8 @@
 
 -export([
 	open/1, close/1,
-	send_bytes/1,
-	read_bytes/1
+	send_bytes/2,
+	read_bytes/2
 ]).
 
 open(Device) when is_list(Device) ->
@@ -26,4 +26,4 @@ close(FD) ->
 	serctl:close(FD).
 
 send_bytes(FD, Bytes) -> serctl:write(FD, Bytes).
-read_bytes(FD, Bytes) -> ok.
+read_bytes(_FD, _Bytes) -> ok.
