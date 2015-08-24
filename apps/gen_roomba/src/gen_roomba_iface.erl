@@ -22,7 +22,7 @@ open(Device) when is_list(Device) ->
 	{ok, FD}.
 
 close(FD) ->
-	ok = serctl:write(FD, <<128:8>>),
+	ok = serctl:write(FD, <<128:8, 133:8>>),
 	serctl:close(FD).
 
 send_bytes(FD, Bytes) -> serctl:write(FD, Bytes).
