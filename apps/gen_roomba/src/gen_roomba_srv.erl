@@ -7,6 +7,7 @@
 %% ------------------------------------------------------------------
 
 -export([start_link/0]).
+-export([connect/1]).
 
 %% ------------------------------------------------------------------
 %% gen_server Function Exports
@@ -21,6 +22,9 @@
 
 start_link() ->
     gen_server:start_link({local, ?SERVER}, ?MODULE, [], []).
+
+connect(Device) ->
+        supervisor:start_child(gen_roomba_sup, [Device]).
 
 %% ------------------------------------------------------------------
 %% gen_server Function Definitions
