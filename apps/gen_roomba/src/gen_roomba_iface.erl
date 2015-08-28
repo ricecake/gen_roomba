@@ -4,6 +4,8 @@
 	open/1, close/1,
 	passive/1, active/1,
 	drive/3,
+        set_song/3, play_song/2,
+        set_led_text/2,
 	send_bytes/2,
 	read_bytes/2
 ]).
